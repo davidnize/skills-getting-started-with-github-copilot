@@ -51,7 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
           details.participants.forEach((email) => {
             const participant = document.createElement("li");
-            participant.textContent = email;
+
+            const participantEmail = document.createElement("span");
+            participantEmail.className = "participant-email";
+            participantEmail.textContent = email;
+            participant.appendChild(participantEmail);
 
             const removeButton = document.createElement("button");
             removeButton.type = "button";
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           const emptyMessage = document.createElement("p");
           emptyMessage.className = "participants-empty";
-          emptyMessage.textContent = "No participants yet";
+          emptyMessage.textContent = "No students signed up yet.";
           participantsSection.appendChild(emptyMessage);
         }
 
